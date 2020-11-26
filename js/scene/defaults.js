@@ -7,7 +7,7 @@ export const LIGHT_INTENSITY = 1.5;
 export const LIGHT_POSITION = [-1, 2, 4];
 export const LIGHT_COLOR = 0xFFFFFF;
 
-export const CUBE_CREATION_INTERVAL = 500;
+export const CUBE_CREATION_INTERVAL = 1000;
 export const CUBE_WIDTH = .5;
 export const CUBE_HEIGHT = .5;
 export const CUBE_DEPTH = .5;
