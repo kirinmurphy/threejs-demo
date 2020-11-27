@@ -2,20 +2,21 @@ import { optimizeScreenRender } from './optimizeScreenRender.js';
 
 export function startUniverse (props) {
   const { 
+    config,
     renderer, 
     camera, 
-    universe, 
-    timeMultiplier, 
-    animateAction 
+    scene, 
+    animateUniverse 
   } = props;
   
   window.requestAnimationFrame(render);
 
   function render(time) {
-    time *= timeMultiplier;
+    console.log('time', time);
+    const animateSpeed = time * 0.001 * config.accelerator;
     optimizeScreenRender(renderer, camera);
-    animateAction(time);
-    renderer.render(universe, camera);
+    animateUniverse(animateSpeed);
+    renderer.render(scene, camera);
     window.requestAnimationFrame(render);
   }  
 }

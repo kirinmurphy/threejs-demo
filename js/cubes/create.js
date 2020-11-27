@@ -11,16 +11,18 @@ import {
   CUBES_MAX_COUNT
 } from './defaults.js';
 
-const boxDimensions = [CUBE_WIDTH, CUBE_HEIGHT, CUBE_DEPTH];
-const geometry = new THREE.BoxGeometry(...boxDimensions);  
+export const cubes = [];
 
-export function addCubesToScene (scene, cubes) {
+export function addCubesToScene (scene) {
   if ( cubes.length === CUBES_MAX_COUNT ) { return; }
   const newCube = getCube(getRandomRGB(), CUBE_STARTING_POSITION);
   cubes.push(newCube);
   scene.add(newCube);
   setTimeout(() => addCubesToScene(scene, cubes), CUBE_CREATION_INTERVAL);
 }
+
+const boxDimensions = [CUBE_WIDTH, CUBE_HEIGHT, CUBE_DEPTH];
+const geometry = new THREE.BoxGeometry(...boxDimensions);  
 
 function getCube (color, position) {
   const material = new THREE.MeshPhongMaterial({color});

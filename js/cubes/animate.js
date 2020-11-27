@@ -1,12 +1,13 @@
+import { cubes } from './create.js';
+
 import { 
-  CUBE_ANIMATE_MULTIPLIER, 
   CUBE_MOVE_X, 
   CUBE_MOVE_Y, 
   CUBE_MOVE_Z, 
   CUBE_X_THRESHOLD_BEFORE_Z_MOVE
 } from './defaults.js';
 
-export function animateCubes (cubes, time) {
+export function animateCubes (time) {
   cubes.forEach((cube) => {
     setNewRotation(cube.rotation, time);
     setNewCubePosition(cube.position);
@@ -14,9 +15,8 @@ export function animateCubes (cubes, time) {
 }
 
 function setNewRotation (rotation, time) {
-  const newRotation = time * CUBE_ANIMATE_MULTIPLIER;
-  rotation.x = newRotation;
-  rotation.y = newRotation;
+  rotation.x = time;
+  rotation.y = time;
 }
 
 function setNewCubePosition (position) {

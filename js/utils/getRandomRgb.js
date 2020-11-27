@@ -8,10 +8,9 @@ export function getRandomRGB () {
   return `rgb(${randomR}, ${randomG}, ${randomB})`;
 }
   
+// range + offset must be <= than 255
 function getColorValue (
   range = RANDOM_COLOR_RANGE, 
-  offset = RANDOM_COLOR_START_OFFSET) {
-    
-  // range + offset must be less than 255
+  offset = RANDOM_COLOR_START_OFFSET) {    
   return Math.floor(Math.random() * range + offset);
 }

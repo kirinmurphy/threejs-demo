@@ -1,12 +1,14 @@
 import * as THREE from '../utils/lib/three.module.js';
 
-import { cosmicCollection, sunProps } from './cosmic-bodies.js';
+import { sunProps } from './defaults.js';
+
+export const cosmicCollection = [];
 
 export function addPlanetarySystem (universe) {
   addCosmicBodyToCosmicParent(sunProps, universe, cosmicCollection);
 }
 
-export function addCosmicBodyToCosmicParent (cosmicBodyProps, cosmicParent, collection, cosmicParentRadius = 0) {
+function addCosmicBodyToCosmicParent (cosmicBodyProps, cosmicParent, collection, cosmicParentRadius = 0) {
   const { offsetFromParent, radius } = cosmicBodyProps;
   const cosmicBody = getSphere(cosmicBodyProps);
 
@@ -15,7 +17,7 @@ export function addCosmicBodyToCosmicParent (cosmicBodyProps, cosmicParent, coll
   }
   cosmicParent.add(cosmicBody);
   collection.push(cosmicBody);  
-  cosmicBodyProps.orbiters && cosmicBodyProps.orbiters.map(orbiterProps => {
+  cosmicBodyProps.orbiters && cosmicBodyProps.orbiters.forEach(orbiterProps => {
     addCosmicBodyToCosmicParent(orbiterProps, cosmicBody, collection, cosmicBodyProps.radius);
   });
 }
