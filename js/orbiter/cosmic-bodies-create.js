@@ -1,4 +1,4 @@
-import * as THREE from '../utils/three.module.js';
+import * as THREE from '../utils/lib/three.module.js';
 
 import { cosmicCollection, sunProps } from './cosmic-bodies.js';
 

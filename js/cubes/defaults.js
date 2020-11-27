@@ -1,12 +1,17 @@
-export const CAMERA_FOV = 160;
-export const CAMERA_NEAR_START = 0.1;
-export const CAMERA_FAR_START = 5;
-export const CAMERA_Z_POSITION = 2;
+export const CUBES_CAMERA_PROPS = {
+  fov: 160,
+  nearStart: 0.1,
+  farStart: 5,
+  position: { z: 2 }
+};
 
-export const LIGHT_INTENSITY = 1.5;
-export const LIGHT_POSITION = [-1, 2, 4];
-export const LIGHT_COLOR = 0xFFFFFF;
+export const CUBES_LIGHT_PROPS = {
+  color: 0xFFFFFF,
+  intensity: 1.5,
+  position: [-1, 2, 4]
+};
 
+export const CUBES_MAX_COUNT = 1000;
 export const CUBE_CREATION_INTERVAL = 1000;
 export const CUBE_WIDTH = .5;
 export const CUBE_HEIGHT = .5;
