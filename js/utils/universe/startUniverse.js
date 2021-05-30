@@ -12,7 +12,7 @@ export function startUniverse (props) {
   window.requestAnimationFrame(render);
 
   function render(time) {
-    console.log('time', time);
+    // console.log('time', time);
     const animateSpeed = time * 0.001 * config.accelerator;
     optimizeScreenRender(renderer, camera);
     animateUniverse(animateSpeed);
